@@ -15,6 +15,8 @@ import { AccountListComponent } from "./account-list/account-list.component";
 import { IncomeListComponent } from "./income/income-list.component";
 import { ExpenseListComponent } from "./expense/expense-list.component";
 import { TransactionComponent } from './transaction/transaction.component';
+import { UserComponent } from './user/user.component';
+import { UserLoginComponent } from './user/user-login/user-login.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { TransactionComponent } from './transaction/transaction.component';
     AccountListComponent,
     IncomeListComponent,
     ExpenseListComponent,
-    TransactionComponent
+    TransactionComponent,
+    UserComponent,
+    UserLoginComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

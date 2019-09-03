@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { UserLoginComponent } from "../user/user-login/user-login.component";
 
 @Component({
   selector: "app-nav",
@@ -11,5 +12,8 @@ export class NavComponent implements OnInit {
     this.title = "Save";
   }
 
+  login() {
+    UserLoginComponent.login();
+  }
   ngOnInit() {}
 }
