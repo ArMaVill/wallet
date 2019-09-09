@@ -1,40 +1,29 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from "./app-routing.module";
-import { AppComponent } from "./app.component";
-import { NavComponent } from "./nav/nav.component";
-import { IncomeComponent } from "./income/income.component";
-
-import { DashboardComponent } from "./dashboard/dashboard.component";
-import { DailyComponent } from "./daily/daily.component";
-
-import { ExpenseComponent } from "./expense/expense.component";
-import { AccountComponent } from "./account/account.component";
-import { AccountListComponent } from "./account-list/account-list.component";
-import { IncomeListComponent } from "./income/income-list.component";
-import { ExpenseListComponent } from "./expense/expense-list.component";
-import { TransactionComponent } from './transaction/transaction.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { NavComponent } from './nav/nav.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AccountComponent } from './account/account.component';
 import { UserComponent } from './user/user.component';
-import { UserLoginComponent } from './user/user-login/user-login.component';
+import { UserLoginComponent } from './user/user-login.component';
+import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    IncomeComponent,
     DashboardComponent,
-    DailyComponent,
-    ExpenseComponent,
     AccountComponent,
-    AccountListComponent,
-    IncomeListComponent,
-    ExpenseListComponent,
-    TransactionComponent,
     UserComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    HomeComponent,
+    NotFoundComponent
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })

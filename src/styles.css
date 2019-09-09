@@ -1,5 +1,241 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500,700");
+
 .logo {
   height: auto;
   width: 150px;
+}
+* {
+  font-family: "Montserrat";
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0%;
+  width: auto;
+  height: 100vh;
+  background: linear-gradient(
+    45deg,
+    rgb(22, 244, 197) 0%,
+    rgb(22, 244, 197) 12%,
+    rgb(24, 219, 187) 12%,
+    rgb(24, 219, 187) 51%,
+    rgb(26, 193, 176) 51%,
+    rgb(26, 193, 176) 52%,
+    rgb(28, 168, 166) 52%,
+    rgb(28, 168, 166) 66%,
+    rgb(29, 143, 155) 66%,
+    rgb(29, 143, 155) 73%,
+    rgb(31, 117, 145) 73%,
+    rgb(31, 117, 145) 80%,
+    rgb(33, 92, 134) 80%,
+    rgb(33, 92, 134) 100%
+  );
+}
+
+.btn-gradient-primary {
+  background: linear-gradient(90deg, rgb(24, 219, 187), rgb(1, 165, 214));
+  border: none;
+  width: 8em;
+  border-radius: 30px;
+  color: white;
+  transition: all 0.1s;
+
+  font-weight: bold;
+  height: 2rem;
+  align-content: center;
+  justify-content: center;
+}
+
+h3 {
+  color: rgb(29, 143, 155);
+  margin-bottom: 1.5rem;
+}
+.btn-gradient-primary:hover {
+  transform: scale(1.05);
+  color: white;
+}
+
+.btn-outline-gradient {
+  background: white;
+  border-width: 1px;
+  border-color: rgb(27, 194, 246);
+  width: 8em;
+  border-radius: 30px;
+  color: rgb(27, 194, 246);
+  transition: all 0.1s;
+  font-size: 1.1rem;
+}
+
+.btn-outline-gradient:hover {
+  transform: scale(1.05);
+
+  color: rgb(27, 194, 246);
+}
+
+.btn-big {
+  width: 11em;
+  border-radius: 40px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.floating {
+  padding-top: 70px;
+  padding-bottom: 150px;
+}
+.colored-container {
+  color: white;
+  background: linear-gradient(225deg, rgb(27, 194, 246), rgb(24, 219, 187));
+  justify-content: center;
+  text-align: center;
+  width: 50rem;
+  border-radius: 20px;
+  padding: 2em;
+}
+
+.error404 {
+  font-size: 15em;
+  margin-top: -15px;
+}
+
+.centered-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center !important;
+  padding: 2rem;
+  padding-top: 75px;
+  background: white;
+  border-radius: 10px;
+  display: table;
+  width: 100%;
+}
+input {
+  width: 100%;
+  padding: 5px 10px;
+  background-color: transparent;
+  border: 1px #b6c1c2 solid;
+  border-radius: 6px;
+}
+
+.navbar {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+.navbar a {
+  color: #0078ef;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+form {
+  display: block;
+  margin-top: 0em;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+label {
+  width: 50%;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+.navbar * {
+  display: inline;
+}
+
+.navbar li {
+  margin: 20px;
+}
+.login {
+  margin: 0;
+  padding: 1erm;
+  float: left;
+}
+
+.register {
+  margin: 0;
+  padding: 2rem;
+  padding-top: 0;
+  float: right;
+}
+
+.login div {
+  width: 100%;
+}
+.algo {
+  width: 100%;
+}
+
+.register ul {
+  margin-top: 1em;
+  margin-left: 2em;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+
+  .login {
+    width: 100%;
+  }
+  .register {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    width: 100%;
+  }
+
+  .login {
+    width: 50%;
+  }
+  .register {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+
+  .login {
+    width: 50%;
+  }
+  .register {
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+
+  .login {
+    width: 50%;
+  }
+  .register {
+    width: 50%;
+  }
 }
