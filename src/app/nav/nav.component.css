@@ -1,0 +1,43 @@
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
+}
+@media only screen and (min-width: 1200px) {
+}
+.navbar {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  height: 60px;
+  background: #333;
+  align-content: center;
+  justify-content: center;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.navbar li {
+  display: inline;
+}
+
+.title {
+  margin-left: 1rem;
+  color: #fff;
+}
+
+.logo {
+  height: 50px;
+}

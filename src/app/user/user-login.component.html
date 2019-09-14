@@ -1,45 +1,50 @@
 <div class="container floating">
   <div class="centered-container">
-    <div>
-      <div class="login">
-        <div class="algo">
-          <h3>Plese sign in</h3>
-          <form>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input
-                type="email"
-                class="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-                placeholder="Enter email"
-              />
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input
-                type="password"
-                class="form-control"
-                id="exampleInputPassword1"
-                placeholder="Password"
-              />
-            </div>
-            <p><a>Forgot password?</a></p>
-            <button type="submit" class="btn-gradient-primary">Login</button>
-          </form>
+    <div class="login bd-r">
+      <h3>Plese sign in</h3>
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Enter email"
+          />
         </div>
-      </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Password"
+          />
+        </div>
+        <div class="form-group">
+          <p><a>Forgot password?</a></p>
+        </div>
 
-      <div class="register">
-        <div class="algo">
-          <h3>Dont have an account</h3>
-          <ul>
-            <li>Set your Income</li>
-            <li>Manage your acounts</li>
-            <li>Track your expenses</li>
-            <li>Save!</li>
-          </ul>
+        <div class="form-group">
+          <button type="submit" class="btn-gradient-primary">Login</button>
         </div>
+      </form>
+    </div>
+
+    <div class="register">
+      <div class="algo">
+        <h3>Dont have an account</h3>
+        <ul class="form-group">
+          <li>Set your Income</li>
+          <li>Manage your acounts</li>
+          <li>Track your expenses</li>
+          <li>Save!</li>
+        </ul>
+
+        <button class="btn-gradient-primary" routerLink="/register">
+          Register
+        </button>
       </div>
     </div>
   </div>

@@ -9,7 +9,7 @@ import { UserLoginComponent } from "../user/user-login.component";
 export class NavComponent implements OnInit {
   title: String;
   constructor() {
-    this.title = "Save";
+    this.title = "$ave";
   }
 
   ngOnInit() {}

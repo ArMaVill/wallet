@@ -1,41 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 595.28 841.89" style="enable-background:new 0 0 595.28 841.89;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#999965;stroke:#000000;stroke-miterlimit:10;}
-	.st1{fill:#DCDA21;stroke:#000000;stroke-miterlimit:10;}
-	.st2{fill:#29469D;stroke:#000000;stroke-miterlimit:10;}
-	.st3{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
-	.st4{fill:#8BC865;stroke:#000000;stroke-miterlimit:10;}
-	.st5{fill:#CF2027;stroke:#000000;stroke-miterlimit:10;}
-	.st6{fill:none;}
-	.st7{fill:#C9B019;stroke:#000000;stroke-miterlimit:10;}
-	.st8{fill:#E8CA1C;stroke:#000000;stroke-miterlimit:10;}
-	.st9{fill:#DAE2D6;stroke:#D0AB2B;stroke-miterlimit:10;}
-	.st10{font-family:'MyriadPro-Regular';}
-	.st11{font-size:61.568px;}
-	.st12{fill:#DAE2D6;stroke:#00844A;stroke-miterlimit:10;}
-	.st13{font-size:47.4085px;}
-</style>
-<path class="st0" d="M144.42,391.81h321.89c3.98,0,7.2-3.23,7.2-7.2V193.53c0-3.98-3.23-7.2-7.2-7.2H144.42
-	c-3.98,0-7.2,3.23-7.2,7.2V384.6C137.22,388.58,140.44,391.81,144.42,391.81z"/>
-<rect x="441" y="216.47" class="st0" width="21.56" height="164.38"/>
-<path class="st1" d="M452.33,373.2h-12.36c-2.89,0-5.23-2.34-5.23-5.23V230.83c0-2.89,2.34-5.23,5.23-5.23h12.36
-	c2.89,0,5.23,2.34,5.23,5.23v137.14C457.56,370.86,455.22,373.2,452.33,373.2z"/>
-<rect x="419.44" y="216.47" class="st0" width="21.56" height="164.38"/>
-<path class="st2" d="M429.5,373.2h-12.34c-2.89,0-5.24-2.35-5.24-5.24V230.84c0-2.89,2.35-5.24,5.24-5.24h12.34
-	c2.89,0,5.24,2.35,5.24,5.24v137.12C434.74,370.85,432.39,373.2,429.5,373.2z"/>
-<path class="st3" d="M241.92,330"/>
-<path class="st3" d="M225.36,330"/>
-<rect x="182.57" y="178.81" transform="matrix(0.9493 -0.3144 0.3144 0.9493 -58.5751 105.2519)" class="st4" width="228.96" height="110.86"/>
-<rect x="397.88" y="216.47" class="st0" width="21.56" height="164.38"/>
-<path class="st5" d="M406.66,373.2h-9.72c-2.9,0-5.26-2.35-5.26-5.26V230.86c0-2.9,2.35-5.26,5.26-5.26h9.72
-	c2.9,0,5.26,2.35,5.26,5.26v137.08C411.92,370.85,409.56,373.2,406.66,373.2z"/>
-<polygon class="st6" points="135,141.36 137.16,141.36 137.16,141.36 135,141.36 "/>
-<circle class="st7" cx="253.68" cy="191.64" r="33.96"/>
-<circle class="st8" cx="256.03" cy="189.3" r="31.67"/>
-<text transform="matrix(1.0808 0 0 1 240.3628 213.2361)" class="st9 st10 st11">$</text>
-<text transform="matrix(1.1747 0 0 1 287.1906 213.2361)" class="st12 st10 st13">AVE</text>
-<rect x="150.23" y="216.47" class="st0" width="247.64" height="164.38"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="135" height="83" viewBox="0 0 135 83">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-0.328" y1="-0.268" x2="1.119" y2="1.388" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#3beedb"/>
+      <stop offset="1" stop-color="#02584f"/>
+    </linearGradient>
+    <filter id="_ave" x="9" y="0" width="119" height="83" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Component_1_1" data-name="Component 1 – 1" transform="translate(0 5)">
+    <rect id="Rectangle_1" data-name="Rectangle 1" width="135" height="74" rx="1" fill="url(#linear-gradient)"/>
+    <ellipse id="Ellipse_14" data-name="Ellipse 14" cx="33.5" cy="24.5" rx="33.5" ry="24.5" transform="translate(34 9)" fill="rgba(116,116,116,0.55)"/>
+    <rect id="Rectangle_4" data-name="Rectangle 4" width="24" height="8" rx="2" transform="translate(104 6)" fill="rgba(88,88,88,0.33)"/>
+    <rect id="Rectangle_5" data-name="Rectangle 5" width="65" height="8" rx="2" transform="translate(34 61)" fill="rgba(68,68,68,0.33)"/>
+    <g transform="matrix(1, 0, 0, 1, 0, -5)" filter="url(#_ave)">
+      <text id="_ave-2" data-name="$ave" transform="translate(18 59)" fill="#fff" font-size="49" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">$ave</tspan></text>
+    </g>
+  </g>
 </svg>

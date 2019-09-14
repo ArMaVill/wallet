@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.708" y2="0.717" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f9ffff" stop-opacity="0.659"/>
+      <stop offset="1" stop-color="#3beedb" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-Web_1920_1">
+      <rect width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="Web_1920_1" data-name="Web 1920 – 1" clip-path="url(#clip-Web_1920_1)">
+    <rect width="1920" height="1080" fill="#fff"/>
+    <g id="Rectangle_30" data-name="Rectangle 30" transform="translate(-42)" fill="#333" stroke="#707070" stroke-width="1">
+      <rect width="1985" height="1108" stroke="none"/>
+      <rect x="0.5" y="0.5" width="1984" height="1107" fill="none"/>
+    </g>
+    <rect id="Rectangle_3" data-name="Rectangle 3" width="1748" height="797" transform="translate(9)" fill="none"/>
+    <rect id="Rectangle_4" data-name="Rectangle 4" width="11" height="1" transform="translate(896)" fill="#fff"/>
+    <g id="Rectangle_29" data-name="Rectangle 29" transform="translate(1817 1075)" fill="#fff" stroke="#707070" stroke-width="1">
+      <rect width="5" height="13" stroke="none"/>
+      <rect x="0.5" y="0.5" width="4" height="12" fill="none"/>
+    </g>
+    <path id="Subtraction_1" data-name="Subtraction 1" d="M1406.631,1012.571H1297.958V248.948l-78.409,62.663V1012.57H1110.877V398.462l-78.409,62.664V1012.57H923.8V453.024L902.57,420.46l-57.182,44.628V1012.57H736.716V549.9L658.307,611.1V1012.57H549.634V695.911l-78.409,61.195V1012.57H362.553V841.92l-78.409,61.195V1012.57H175.472V987.927L143.9,1012.57H0L175.472,875.623v-1.045h1.338L362.553,729.615v-2.228h2.855L921.161,293.648l.436.694.512-.416L983.041,387.4l127.836-102.165v-.959h1.2L1395.664,57.64l-20.323-31.177L1533.227,0l-71.369,159.188-17.669-27.106L1406.631,162.1V1012.57Z" transform="translate(204.439 75.229)" fill="url(#linear-gradient)"/>
+    <path id="Path_5" data-name="Path 5" d="M0,1143.857,908.324,918.32l216.913-223.031L1412.2,645.17,1663,402.092l284.7-273.15L1961.257,1204H0Z" transform="translate(-10 -116)" fill="#3beedb" stroke="#707070" stroke-width="1"/>
+  </g>
+</svg>
