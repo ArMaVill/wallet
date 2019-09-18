@@ -6,13 +6,18 @@
     <li><a routerLink="/dashboard">Dashboard</a></li>
     <li><a routerLink="/contact">Contact</a></li>
     <li><a routerLink="/about">About</a></li>
+    <li *ngIf="currentUser && !loading">Welcome {{ user.username }}</li>
     <li>
       <button
+        *ngIf="!currentUser"
         class="btn-gradient-primary my-2 my-sm-0 mr-2"
         routerLink="/login"
       >
         Login
       </button>
+      <a *ngIf="currentUser" class="" (click)="logout()">
+        Logout
+      </a>
     </li>
   </ul>
 </nav>

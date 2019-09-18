@@ -3,84 +3,77 @@
     <div class="register bd-r">
       <div class="algo">
         <h3>Registrate</h3>
-        <form>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
           <div class="form-group">
-            <label for="exampleInputEmail1">Usuario</label>
+            <label>Usuario</label>
             <input
-              type="email"
+              type="text"
               class="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
+              formControlName="username"
               placeholder="Nombre de usuario"
+              [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+              autocomplete="off"
             />
+            <div
+              *ngIf="submitted && f.username.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.username.errors.required">Usuario es requerido</div>
+            </div>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
+            <label>Email address</label>
             <input
               type="email"
               class="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
               placeholder="Enter email"
+              formControlName="email"
+              [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+              autocomplete="off"
             />
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">Email es requerido</div>
+            </div>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Contraseña</label>
+            <label>Contraseña</label>
             <input
               type="password"
               class="form-control"
-              id="exampleInputPassword1"
+              formControlName="password"
               placeholder="Contraseña"
+              [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+              autocomplete="off"
             />
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Confirmar Contraseña</label>
-            <input
-              type="password"
-              class="form-control"
-              id="exampleInputPassword1"
-              placeholder="Password"
-            />
+            <div
+              *ngIf="submitted && f.password.errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f.password.errors.required">
+                password es requerido
+              </div>
+            </div>
           </div>
 
           <div class="form-group">
-            <button class="btn-gradient-primary" routerLink="/register">
-              Register
-            </button>
+            <div class="form-group">
+              <button [disabled]="loading" class="btn-gradient-primary">
+                <span
+                  *ngIf="loading"
+                  class="spinner-border spinner-border-sm mr-1"
+                ></span>
+                Register
+              </button>
+            </div>
           </div>
         </form>
       </div>
     </div>
     <div class="login">
       <h3>Plese sign in</h3>
-      <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input
-            type="email"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            placeholder="Enter email"
-          />
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Constraseña</label>
-          <input
-            type="password"
-            class="form-control"
-            id="exampleInputPassword1"
-            placeholder="Contraseñsa"
-          />
-        </div>
-        <div class="form-group">
-          <p><a>Olvidaste tu contraseña?</a></p>
-        </div>
-
-        <div class="form-group">
-          <button type="submit" class="btn-gradient-primary">Login</button>
-        </div>
-      </form>
+      <div class="form-group">
+        <button type="submit" class="btn-gradient-primary">Login</button>
+      </div>
     </div>
   </div>
 </div>

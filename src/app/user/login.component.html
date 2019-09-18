@@ -2,32 +2,46 @@
   <div class="centered-container">
     <div class="login bd-r">
       <h3>Plese sign in</h3>
-      <form>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
           <input
             type="email"
             class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
+            formControlName="email"
             placeholder="Enter email"
+            [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
           />
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">Email es requerido</div>
+          </div>
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Password</label>
           <input
             type="password"
-            class="form-control"
-            id="exampleInputPassword1"
+            formControlName="password"
             placeholder="Password"
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
           />
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">
+              Introduzca la contraseña
+            </div>
+          </div>
         </div>
         <div class="form-group">
           <p><a>Forgot password?</a></p>
         </div>
 
         <div class="form-group">
-          <button type="submit" class="btn-gradient-primary">Login</button>
+          <button [disabled]="loading" class="btn-gradient-primary">
+            <span
+              *ngIf="loading"
+              class="spinner-border spinner-border-sm mr-1"
+            ></span>
+            Login
+          </button>
         </div>
       </form>
     </div>

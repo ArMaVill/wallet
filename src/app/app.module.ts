@@ -1,5 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -7,14 +9,16 @@ import { NavComponent } from "./nav/nav.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { AccountComponent } from "./account/account.component";
 
-import { UserLoginComponent } from "./user/user-login.component";
+import { LoginComponent } from "./user/login.component";
 import { HomeComponent } from "./home/home.component";
-import { HttpClientModule } from "@angular/common/http";
+
 import { NotFoundComponent } from "./not-found/not-found.component";
 import { ContactComponent } from "./contact/contact.component";
 import { IncomeComponent } from "./income/income.component";
 import { ExpencesComponent } from "./expences/expences.component";
 import { RegisterComponent } from "./register/register.component";
+import { ErrorInterceptor } from "./_helpers/error.interceptor";
+import { JwtInterceptor } from "./_helpers/jwt.inteceptor";
 
 @NgModule({
   declarations: [
@@ -22,8 +26,7 @@ import { RegisterComponent } from "./register/register.component";
     NavComponent,
     DashboardComponent,
     AccountComponent,
-
-    UserLoginComponent,
+    LoginComponent,
     HomeComponent,
     NotFoundComponent,
     ContactComponent,
@@ -31,8 +34,16 @@ import { RegisterComponent } from "./register/register.component";
     ExpencesComponent,
     RegisterComponent
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    ReactiveFormsModule
+  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
