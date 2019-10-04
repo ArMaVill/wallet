@@ -1,0 +1,19 @@
+.accounts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 20px;
+  grid-gap: 20px;
+}
+.account {
+  list-style: none;
+  border-radius: 5px;
+  padding: 10px;
+  height: 60px;
+}
+.add {
+  border: 2px white solid;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}

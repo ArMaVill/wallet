@@ -2,16 +2,17 @@
   <h1 class="title">
     <a routerLink="/"><img class="logo" src="../../assets/img//Logo.svg"/></a>
   </h1>
-  <ul class="">
-    <li><a routerLink="/dashboard">Dashboard</a></li>
-    <li><a routerLink="/contact">Contact</a></li>
-    <li><a routerLink="/about">About</a></li>
+  <ul class="nav-links" [ngClass]="navStatus ? 'nav-active' : ''">
+    <li><a routerLink="/dashboard" (click)="activateNav()">Dashboard</a></li>
+    <li><a routerLink="/contact" (click)="activateNav()">Contact</a></li>
+    <li><a routerLink="/about" (click)="activateNav()">About</a></li>
     <li *ngIf="currentUser && !loading">Welcome {{ user.username }}</li>
-    <li>
+    <li class="nav-link">
       <button
         *ngIf="!currentUser"
         class="btn-gradient-primary my-2 my-sm-0 mr-2"
         routerLink="/login"
+        (click)="activateNav()"
       >
         Login
       </button>
@@ -20,4 +21,9 @@
       </a>
     </li>
   </ul>
+  <div class="burger" (click)="activateNav()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 </nav>

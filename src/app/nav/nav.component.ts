@@ -43,4 +43,9 @@ export class NavComponent implements OnInit {
     this.authenticationService.logout();
     this.router.navigate(["/login"]);
   }
+
+  navStatus: boolean = false;
+  activateNav() {
+    this.navStatus = !this.navStatus;
+  }
 }

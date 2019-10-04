@@ -1,22 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { ModalService } from "../_services/modal.service";
 
 @Component({
-  selector: 'app-account',
-  templateUrl: './account.component.html',
-  styleUrls: ['./account.component.css']
+  selector: "app-account",
+  templateUrl: "./account.component.html",
+  styleUrls: ["./account.component.css"]
 })
 export class AccountComponent implements OnInit {
-  title = 'Account';
-  accounts = [{ name: 'Wallet', balance: 1120 }];
+  title = "Account";
+  accounts = [
+    { name: "Billetera", balance: 1120, color: "#009ccc" },
+    { name: "Banco", balance: 750000, color: "#ba2402" },
+    { name: "Banco Ahorros", balance: 750000, color: "#00cc4e" }
+  ];
 
-  constructor() {}
+  constructor(private modalService: ModalService) {}
 
-  addAccount(name, balance) {
-    const newAccount = { name: name.value, balance: balance.value };
+  addAccount(name, balance, color) {
+    const newAccount = {
+      name: name.value,
+      balance: balance.valum,
+      color: color.value
+    };
     this.accounts.push(newAccount);
-    name.value = '';
+    name.value = "";
     name.focus();
-    balance.value = '';
+    balance.value = "";
     return false;
   }
 
@@ -26,4 +35,12 @@ export class AccountComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  openModal(id: string) {
+    this.modalService.open(id);
+  }
+
+  closeModal(id: string) {
+    this.modalService.close(id);
+  }
 }

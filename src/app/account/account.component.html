@@ -1,4 +1,26 @@
 <div>
-  <h1>Account</h1>
-  <p>User can check his accounts/wallet</p>
+  <h1>Lista de cuentas</h1>
+  <ul class="accounts">
+    <li
+      class="account"
+      *ngFor="let account of accounts"
+      [ngStyle]="{ 'background-color': account.color }"
+    >
+      <p>{{ account.name }}</p>
+      <p>{{ account.balance | currency: "₡" }}</p>
+    </li>
+    <li class="account add">
+      <button (click)="openModal('modal')">
+        Agregar cuenta <span>+</span>
+      </button>
+
+      <jw-modal id="modal">
+        <h1>A Custom Angular 7 Modal!</h1>
+        <p>
+          Home page text:
+          <button (click)="closeModal('modal')">Close</button>
+        </p>
+      </jw-modal>
+    </li>
+  </ul>
 </div>
