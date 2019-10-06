@@ -134,6 +134,7 @@ h1 {
   padding-left: 15px;
   padding-right: 15px;
   color: white;
+  height: 100vh;
 }
 
 .floating {
@@ -145,9 +146,6 @@ h1 {
   background: linear-gradient(225deg, rgb(27, 194, 246), rgb(24, 219, 187));
   justify-content: center;
   text-align: center;
-  width: 50rem;
-  border-radius: 20px;
-  padding: 2em;
 }
 
 .error404 {
@@ -164,6 +162,55 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
+}
+
+/* MODAL STYLES
+-------------------------------*/
+jw-modal {
+  /* modals are hidden by default */
+  display: none;
+}
+.jw-modal {
+  /* modal container fixed across whole screen */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* z-index must be higher than .jw-modal-background */
+  z-index: 1000;
+
+  /* enables scrolling for tall modals */
+  overflow: auto;
+}
+.jw-modal-body {
+  padding: 20px;
+  background: #fff;
+
+  /* margin exposes part of the modal background */
+  margin: 40px;
+}
+
+.jw-modal-background {
+  /* modal background fixed across whole screen */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* semi-transparent black  */
+  background-color: #000;
+  opacity: 0.75;
+
+  /* z-index must be below .jw-modal and above everything else  */
+  z-index: 900;
+}
+
+body.jw-modal-open {
+  /* body overflow is hidden to hide main scrollbar when modal window is open */
+  overflow: hidden;
 }
 
 .grid {
@@ -233,6 +280,9 @@ label {
 }
 
 @media only screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
   .container {
     width: 100%;
   }
@@ -251,11 +301,6 @@ label {
     width: 100%;
   }
 
-  .login {
-  }
-  .register {
-  }
-
   .register ul {
     margin-top: 1em;
     margin-left: 2em;
@@ -266,19 +311,9 @@ label {
   .container {
     width: 70%;
   }
-
-  .login {
-  }
-  .register {
-  }
 }
 @media only screen and (min-width: 1200px) {
   .container {
     width: 70%;
-  }
-
-  .login {
-  }
-  .register {
   }
 }
