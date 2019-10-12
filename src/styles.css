@@ -1,23 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:500,700');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500,700");
 
 .logo {
   height: auto;
   width: 150px;
 }
 * {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 body {
   margin: 0%;
-  width: auto;
-  background-size: auto;
+  width: 100%;
+  overflow: auto;
+  min-height: 100vh;
   background-attachment: fixed;
-  background-position: center center;
+
   background-repeat: no-repeat;
   background: linear-gradient(
     45deg,
@@ -81,15 +82,9 @@ h3 {
 }
 
 h1 {
-  background: linear-gradient(
-    -45deg,
-    rgb(26, 193, 176) 10%,
-    rgb(28, 168, 166) 51%,
-    rgb(33, 92, 134)
-  );
   background-clip: text;
   -webkit-background-clip: text;
-  color: transparent;
+  color: white;
   text-decoration: none;
 }
 
@@ -134,7 +129,7 @@ h1 {
   padding-left: 15px;
   padding-right: 15px;
   color: white;
-  height: 100vh;
+  height: 100%;
 }
 
 .floating {
@@ -143,7 +138,8 @@ h1 {
 }
 .colored-container {
   color: white;
-  background: linear-gradient(225deg, rgb(27, 194, 246), rgb(24, 219, 187));
+  /*background: linear-gradient(180deg, rgb(137, 227, 255), rgb(215, 252, 246));*/
+  background: #eeeeff;
   justify-content: center;
   text-align: center;
 }
@@ -156,61 +152,12 @@ h1 {
 .centered-container {
   justify-content: center !important;
   padding: 2rem;
-  padding-top: 75px;
+
   background: #333;
   border-radius: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
-}
-
-/* MODAL STYLES
--------------------------------*/
-jw-modal {
-  /* modals are hidden by default */
-  display: none;
-}
-.jw-modal {
-  /* modal container fixed across whole screen */
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  /* z-index must be higher than .jw-modal-background */
-  z-index: 1000;
-
-  /* enables scrolling for tall modals */
-  overflow: auto;
-}
-.jw-modal-body {
-  padding: 20px;
-  background: #fff;
-
-  /* margin exposes part of the modal background */
-  margin: 40px;
-}
-
-.jw-modal-background {
-  /* modal background fixed across whole screen */
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  /* semi-transparent black  */
-  background-color: #000;
-  opacity: 0.75;
-
-  /* z-index must be below .jw-modal and above everything else  */
-  z-index: 900;
-}
-
-body.jw-modal-open {
-  /* body overflow is hidden to hide main scrollbar when modal window is open */
-  overflow: hidden;
 }
 
 .grid {
@@ -317,13 +264,4 @@ label {
   .container {
     width: 70%;
   }
-}
-
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
 }

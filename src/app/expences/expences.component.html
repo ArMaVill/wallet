@@ -1,4 +1,10 @@
 <div>
-  <h1>Expenses</h1>
-  <p>User manage expences by category</p>
+  <h1>Gastos</h1>
+  <ul class="expenses">
+    <li class="colored-container" *ngFor="let expense of expenses">
+      <p>{{ expense.name }}</p>
+
+      <p>{{ expense.total | currency: "₡" }}</p>
+    </li>
+  </ul>
 </div>

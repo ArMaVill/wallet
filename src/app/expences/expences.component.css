@@ -1,0 +1,37 @@
+.expenses {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.expenses li {
+  height: 10vh;
+  border-radius: 10px;
+  color: #333;
+
+  text-align: center;
+  display: grid;
+  grid-template-rows: 1fr, 3fr;
+  padding: 10px;
+}
+
+.food {
+  background: rgb(251, 107, 50);
+}
+
+.shopping {
+  background: rgb(113, 208, 247);
+}
+.housing {
+  background: rgb(249, 186, 80);
+}
+.services {
+  background: rgb(180, 56, 255);
+}
+.transportation {
+  background: rgb(159, 177, 231);
+}
+.entertainment {
+  background: rgb(46, 210, 183);
+}
