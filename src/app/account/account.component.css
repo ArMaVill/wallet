@@ -5,6 +5,8 @@
   grid-gap: 20px;
 }
 .account {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
   list-style: none;
   border-radius: 5px;
   padding: 10px;

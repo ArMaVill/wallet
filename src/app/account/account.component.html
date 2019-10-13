@@ -6,11 +6,20 @@
       *ngFor="let account of accounts"
       [ngStyle]="{ 'background-color': account.color }"
     >
-      <p>{{ account.name }}</p>
-      <p>{{ account.balance | currency: "₡" }}</p>
-      <i class="fas fa-ellipsis-v"></i>
-    </li>
+      <div>
+        <p>{{ account.name }}</p>
+        <p>{{ account.balance | currency: '₡' }}</p>
+      </div>
+      <div>
+        <button class="btn-small" (click)="openIncomeDialog(account.id)">
+          +
+        </button>
 
+        <button class="btn-small" (click)="openTransferDialog(account.id)">
+          <>
+        </button>
+      </div>
+    </li>
     <button (click)="openDialog()" class="account add add-button">
       <p>Agregar cuenta <span>+</span></p>
     </button>

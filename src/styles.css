@@ -1,13 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url("https://fonts.googleapis.com/css?family=Montserrat:500,700");
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,700');
 
 .logo {
   height: auto;
   width: 150px;
 }
 * {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -123,6 +123,20 @@ h1 {
   height: 3rem;
 }
 
+.btn-small {
+  border-radius: 5px;
+  height: 30px;
+  width: 30px;
+  border: none;
+  margin-left: 10px;
+  font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+  font-size: 18px;
+}
+
+.dark {
+  background: #333;
+  color: white;
+}
 .container {
   margin-right: auto;
   margin-left: auto;

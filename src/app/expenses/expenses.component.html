@@ -1,0 +1,13 @@
+<div>
+  <h1>Gastos</h1>
+  <ul class="expenses">
+    <li class="expense colored-container" *ngFor="let expense of expenses">
+      <div>
+        <p>{{ expense.name }}</p>
+        <p>{{ expense.total | currency: '₡' }}</p>
+      </div>
+
+      <button class="btn-small dark" (click)="openDialog(expense.id)">+</button>
+    </li>
+  </ul>
+</div>

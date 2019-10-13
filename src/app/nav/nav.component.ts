@@ -36,6 +36,7 @@ export class NavComponent implements OnInit {
         this.user = users;
       });
     }
+    console.log(this.user);
   }
 
   logout() {

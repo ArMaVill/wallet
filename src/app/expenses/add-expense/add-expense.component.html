@@ -1,26 +1,35 @@
-<mat-dialog-title>Ingreso</mat-dialog-title>
-<form [formGroup]="incomeForm" (ngSubmit)="onSubmit()">
+<mat-dialog-title>Gasto</mat-dialog-title>
+<form [formGroup]="expenseForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <label>Cuenta</label>
-    <select
-      formControlName="account"
-      class="form-control"
-      [(ngModel)]="data.selectedExpense"
-      required
-    >
+    <select formControlName="account" class="form-control" required>
       <option *ngFor="let account of accounts" [ngValue]="account.id">
         {{ account.name }}
         <div class="color"></div>
       </option>
     </select>
   </div>
-
+  <div class="form-group">
+    <label>Categoria</label>
+    <select
+      formControlName="expense"
+      class="form-control"
+      required
+      [(ngModel)]="data.selectedExpense"
+    >
+      <option *ngFor="let expense of expenses" [ngValue]="expense.id">
+        {{ expense.name }}
+        <div class="color"></div>
+      </option>
+    </select>
+    {{ data.selectedExpense }}
+  </div>
   <div class="form-group">
     <label>Cantidad</label>
     <input
       type="number"
       class="form-control"
-      placeholder="Cantidad del ingreso"
+      placeholder="Gasto realizado"
       formControlName="amount"
       [ngClass]="{ 'is-invalid': submitted && f.amount.errors }"
       autocomplete="off"
