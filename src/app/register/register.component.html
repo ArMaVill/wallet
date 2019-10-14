@@ -1,5 +1,3 @@
-
-
 <div class="container floating">
   <div class="centered-container">
     <div class="register bd-r">
@@ -16,10 +14,7 @@
               [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
               autocomplete="off"
             />
-            <div
-              *ngIf="submitted && f.username.errors"
-              class="invalid-feedback"
-            >
+            <div *ngIf="submitted && f.username.errors" class="error">
               <div *ngIf="f.username.errors.required">Usuario es requerido</div>
             </div>
           </div>
@@ -30,11 +25,14 @@
               class="form-control"
               placeholder="Enter email"
               formControlName="email"
+              ngModel
+              email
               [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
               autocomplete="off"
             />
-            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="submitted && f.email.errors" class="error">
               <div *ngIf="f.email.errors.required">Email es requerido</div>
+              <div *ngIf="f.email.errors.email">Email invalido</div>
             </div>
           </div>
           <div class="form-group">
@@ -47,10 +45,7 @@
               [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
               autocomplete="off"
             />
-            <div
-              *ngIf="submitted && f.password.errors"
-              class="invalid-feedback"
-            >
+            <div *ngIf="submitted && f.password.errors" class="error">
               <div *ngIf="f.password.errors.required">
                 password es requerido
               </div>

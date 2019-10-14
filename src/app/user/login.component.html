@@ -10,10 +10,13 @@
             class="form-control"
             formControlName="email"
             placeholder="Enter email"
+            ngModel
+            email
             [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
           />
-          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="submitted && f.email.errors" class="error">
             <div *ngIf="f.email.errors.required">Email es requerido</div>
+            <div *ngIf="f.email.errors.email">Email invalido</div>
           </div>
         </div>
         <div class="form-group">
@@ -24,7 +27,7 @@
             placeholder="Password"
             [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
           />
-          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="submitted && f.password.errors" class="error">
             <div *ngIf="f.password.errors.required">
               Introduzca la contraseña
             </div>
@@ -42,6 +45,7 @@
             ></span>
             Login
           </button>
+          <div *ngIf="error" class="error">{{ error }}</div>
         </div>
       </form>
     </div>

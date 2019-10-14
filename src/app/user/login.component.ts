@@ -1,19 +1,20 @@
-import { Component, OnInit } from "@angular/core";
-import { AuthenticationService } from "../_services/authentication.service";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { Router, ActivatedRoute } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../_services/authentication.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+import { first } from 'rxjs/operators';
 
 @Component({
-  selector: "app-login",
-  templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.css"]
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   loading = false;
   submitted = false;
   returnUrl: string;
-  error = "";
+  error = '';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -22,18 +23,18 @@ export class LoginComponent implements OnInit {
     private authenticationService: AuthenticationService
   ) {
     if (this.authenticationService.currentUserValue) {
-      this.router.navigate(["/"]);
+      this.router.navigate(['/']);
     }
   }
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      email: ["", Validators.required],
-      password: ["", Validators.required]
+      email: ['', Validators.required],
+      password: ['', Validators.required]
     });
 
     // get return url from route parameters or default to '/'
     this.returnUrl =
-      this.route.snapshot.queryParams["returnUrl"] || "/dashboard";
+      this.route.snapshot.queryParams['returnUrl'] || '/dashboard';
   }
 
   // convenience getter for easy access to form fields
@@ -52,6 +53,7 @@ export class LoginComponent implements OnInit {
     this.loading = true;
     this.authenticationService
       .login(this.f.email.value, this.f.password.value)
+      .pipe(first())
       .subscribe(
         data => {
           this.router.navigate([this.returnUrl]);

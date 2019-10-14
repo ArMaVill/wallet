@@ -1,8 +1,8 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AccountService } from '../_services/account.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { log } from 'util';
+import { map, filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-transfer',
@@ -16,6 +16,7 @@ export class TransferComponent implements OnInit {
   loading = false;
   submitted = false;
   error = '';
+  onTransfer = new EventEmitter();
 
   constructor(
     private formBuilder: FormBuilder,
@@ -40,12 +41,13 @@ export class TransferComponent implements OnInit {
   }
 
   accountToTransfer(value) {
-    this.toAccounts = [];
-    for (const account of this.accounts) {
-      this.toAccounts.push(account);
-    }
+    console.log(value);
 
-    this.toAccounts.splice(value, 1);
+    this.toAccounts = [];
+    this.accountService
+      .getAccounts()
+      .pipe(map(data => data.filter(x => x.id !== value)))
+      .subscribe(result => (this.toAccounts = result));
   }
 
   onChange(event: any) {
@@ -53,11 +55,9 @@ export class TransferComponent implements OnInit {
   }
 
   onSubmit() {
-    this.accountService.transfer(
-      this.f.from.value,
-      this.f.to.value,
-      this.f.amount.value
-    );
+    this.accountService
+      .transfer(this.f.from.value, this.f.to.value, this.f.amount.value)
+      .subscribe(() => this.onTransfer.emit());
     this.dialogRef.close(false);
   }
 }

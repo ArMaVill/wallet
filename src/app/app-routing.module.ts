@@ -1,36 +1,38 @@
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
-import { LoginComponent } from "./user/login.component";
-import { HomeComponent } from "./home/home.component";
-import { NotFoundComponent } from "./not-found/not-found.component";
-import { RegisterComponent } from "./register/register.component";
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { LoginComponent } from './user/login.component';
+import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from './_helpers/auth.guard';
 
 const routes: Routes = [
   {
-    path: "login",
+    path: 'login',
     component: LoginComponent
   },
   {
-    path: "register",
+    path: 'register',
     component: RegisterComponent
   },
-  { path: "", component: HomeComponent },
+  { path: '', component: HomeComponent },
   {
-    path: "dashboard",
+    path: 'dashboard',
     loadChildren: () =>
-      import("./dashboard/dashboard.module").then(mod => mod.DashboardModule)
+      import('./dashboard/dashboard.module').then(mod => mod.DashboardModule),
+    canActivate: [AuthGuard]
   },
   {
-    path: "contact",
+    path: 'contact',
     loadChildren: () =>
-      import("./contact/contact.module").then(mod => mod.ContactModule)
+      import('./contact/contact.module').then(mod => mod.ContactModule)
   },
   {
-    path: "about",
+    path: 'about',
     loadChildren: () =>
-      import("./about/about.module").then(mod => mod.AboutModule)
+      import('./about/about.module').then(mod => mod.AboutModule)
   },
-  { path: "**", component: NotFoundComponent }
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({

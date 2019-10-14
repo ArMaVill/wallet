@@ -7,15 +7,15 @@
       class="form-control"
       formControlName="name"
       placeholder="Account name"
-      [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+      [ngClass]="{ 'is-invalid': submitted && f.name.errors }"
       autocomplete="off"
     />
-    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+    <div *ngIf="submitted && f.name.errors" class="error">
       <div *ngIf="f.name.errors.required">Nombre de la cuenta es requerido</div>
     </div>
   </div>
   <div class="form-group">
-    <label>Balacne</label>
+    <label>Balance</label>
     <input
       type="number"
       class="form-control"
@@ -24,7 +24,7 @@
       [ngClass]="{ 'is-invalid': submitted && f.balance.errors }"
       autocomplete="off"
     />
-    <div *ngIf="submitted && f.balance.errors" class="invalid-feedback">
+    <div *ngIf="submitted && f.balance.errors" class="error">
       <div *ngIf="f.balance.errors.required">balance es requerido</div>
     </div>
   </div>

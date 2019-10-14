@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable, HostBinding } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { AddAccountComponent } from './add-account/add-account.component';
 
@@ -20,6 +20,7 @@ export class AccountComponent implements OnInit {
   loading = false;
   accounts: any[];
   currentUser: User;
+  toUpdate = false;
 
   constructor(
     public dialog: MatDialog,
@@ -27,22 +28,36 @@ export class AccountComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.updateAccounts();
+    this.accountService.change.subscribe(toUpdate => this.updateAccounts());
+  }
+
+  updateAccounts() {
     this.accountService.getAccounts().subscribe(x => (this.accounts = x));
   }
 
   openDialog() {
-    this.dialog.open(AddAccountComponent);
+    let dialogRef = this.dialog.open(AddAccountComponent);
+    dialogRef.componentInstance.onAdd.subscribe(() => {
+      this.accountService.getAccounts().subscribe(x => (this.accounts = x));
+    });
   }
 
   openIncomeDialog(option) {
-    this.dialog.open(IncomeComponent, {
-      data: { selectedExpense: option }
+    let dialogRef = this.dialog.open(IncomeComponent, {
+      data: { selectedAccount: option }
+    });
+    dialogRef.componentInstance.onIncome.subscribe(() => {
+      this.accountService.getAccounts().subscribe(x => (this.accounts = x));
     });
   }
 
   openTransferDialog(option) {
-    this.dialog.open(TransferComponent, {
+    let dialogRef = this.dialog.open(TransferComponent, {
       data: { selectedAccount: option }
+    });
+    dialogRef.componentInstance.onTransfer.subscribe(() => {
+      this.accountService.getAccounts().subscribe(x => (this.accounts = x));
     });
   }
 }

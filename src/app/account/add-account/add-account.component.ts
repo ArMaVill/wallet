@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AccountService } from '../../_services/account.service';
 import { MatDialogRef } from '@angular/material';
+import { AccountComponent } from '../account.component';
 
 @Component({
   selector: 'app-add-account',
@@ -13,6 +14,7 @@ export class AddAccountComponent implements OnInit {
   loading = false;
   submitted = false;
   error = '';
+  onAdd = new EventEmitter();
 
   colors: any = [
     { value: '#00cc4e', name: 'VERDE' },
@@ -53,7 +55,7 @@ export class AddAccountComponent implements OnInit {
       color: this.f.color.value
     };
 
-    this.accountService.add(newAccount);
+    this.accountService.add(newAccount).subscribe(() => this.onAdd.emit());
     this.dialogRef.close(false);
     return false;
   }

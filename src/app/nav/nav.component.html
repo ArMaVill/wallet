@@ -6,7 +6,9 @@
     <li><a routerLink="/dashboard" (click)="activateNav()">Dashboard</a></li>
     <li><a routerLink="/contact" (click)="activateNav()">Contact</a></li>
     <li><a routerLink="/about" (click)="activateNav()">About</a></li>
-    <li *ngIf="currentUser && !loading">Welcome {{ user.username }}</li>
+    <li class="white" *ngIf="currentUser && !loading">
+      Welcome {{ user.username }}
+    </li>
     <li class="nav-link">
       <button
         *ngIf="!currentUser"

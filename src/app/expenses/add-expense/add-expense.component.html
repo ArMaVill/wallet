@@ -4,7 +4,7 @@
     <label>Cuenta</label>
     <select formControlName="account" class="form-control" required>
       <option *ngFor="let account of accounts" [ngValue]="account.id">
-        {{ account.name }}
+        {{ account.name }} ({{ account.balance | currency: '₡' }})
         <div class="color"></div>
       </option>
     </select>
@@ -18,11 +18,10 @@
       [(ngModel)]="data.selectedExpense"
     >
       <option *ngFor="let expense of expenses" [ngValue]="expense.id">
-        {{ expense.name }}
+        {{ expense.name }} ({{ expense.total | currency: '₡' }})
         <div class="color"></div>
       </option>
     </select>
-    {{ data.selectedExpense }}
   </div>
   <div class="form-group">
     <label>Cantidad</label>

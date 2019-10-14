@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter, Output } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment.prod';
@@ -12,8 +12,11 @@ import { map } from 'rxjs/operators';
 })
 export class AccountService {
   currentUser: User;
-  accounts = [];
+  accounts: any[];
   expenses = [];
+  toUpdate = false;
+  @Output() change: EventEmitter<boolean> = new EventEmitter();
+
   constructor(
     private http: HttpClient,
     private authenticationService: AuthenticationService
@@ -24,18 +27,16 @@ export class AccountService {
   }
 
   getAccounts() {
-    const result = this.http
-      .get<any[]>(`${environment.apiUrl}/user/accounts`)
-      .pipe(
-        map(accounts => {
-          this.accounts = accounts;
-          return accounts;
-        })
-      );
+    const result = this.http.get<any[]>(`${environment.apiUrl}/user/accounts`);
 
     return result;
   }
 
+  update() {
+    console.log(this.toUpdate);
+    this.toUpdate = !this.toUpdate;
+    this.change.emit(this.toUpdate);
+  }
   getExpenses() {
     const result = this.http
       .get<any[]>(`${environment.apiUrl}/user/expenses`)
@@ -48,25 +49,23 @@ export class AccountService {
     return result;
   }
 
-  addExpense(account, expense, ammount) {
-    this.accounts[account].balance -= ammount;
-    this.expenses[expense].total += ammount;
+  addExpense(account, expense, amount) {
+    const newExpense = { account, expense, amount };
+    return this.http.post(`${environment.apiUrl}/user/expenses`, newExpense);
   }
 
-  addIncome(account, ammount) {
-    this.accounts[account].balance += ammount;
+  addIncome(account, amount) {
+    const income = { account, amount };
+    return this.http.post(`${environment.apiUrl}/user/income`, income);
   }
 
   add(newAccount) {
-    newAccount.id = this.accounts.length;
-    console.log(newAccount);
-    this.accounts.push(newAccount);
-    //return this.http.post(`${environment.apiUrl}/user/register`, newAccount);
+    return this.http.post(`${environment.apiUrl}/user/accounts`, newAccount);
   }
 
-  transfer(from, to, ammount) {
-    this.accounts[from].balance -= ammount;
-    this.accounts[to].balance += ammount;
+  transfer(from, to, amount) {
+    const transfer = { from, to, amount };
+    return this.http.post(`${environment.apiUrl}/user/transfer`, transfer);
   }
 
   delete(id) {

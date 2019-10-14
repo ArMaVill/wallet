@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AccountService } from '../../_services/account.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
@@ -15,6 +15,7 @@ export class AddExpenseComponent implements OnInit {
   loading = false;
   submitted = false;
   error = '';
+  onExpense = new EventEmitter();
 
   constructor(
     private formBuilder: FormBuilder,
@@ -37,12 +38,13 @@ export class AddExpenseComponent implements OnInit {
     });
   }
   onSubmit() {
-    this.f.account.value,
-      this.accountService.addExpense(
+    this.accountService
+      .addExpense(
         this.f.account.value,
         this.f.expense.value,
         this.f.amount.value
-      );
+      )
+      .subscribe(() => this.onExpense.emit());
     this.dialogRef.close(false);
   }
 }
