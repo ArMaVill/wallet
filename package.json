@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "node server.js",
     "build": "ng build",
-    "postinstall": "ng build --aot --prod",
+    "postinstall": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -16,6 +16,9 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/architect": "^0.803.9",
+    "@angular-devkit/core": "^8.3.9",
+    "@angular-devkit/schematics": "^8.3.9",
     "@angular/animations": "~9.0.0-next.5",
     "@angular/cdk": "~8.2.2",
     "@angular/common": "~9.0.0-next.5",
