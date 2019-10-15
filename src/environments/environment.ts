@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://wallet-rest.herokuapp.com//api'
+  apiUrl: 'https://wallet-rest.herokuapp.com/api'
 };
 
 /*
